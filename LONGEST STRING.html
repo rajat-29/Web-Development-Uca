@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		var str="Hello RAJAT JI";
+		var flag=false;
+		var max=0,j=0;
+		for(var i=0;i<str.length;i++)
+		{
+			if(str[i]==' ')
+			{
+				if(flag==true)
+				{
+					if(j>max)
+					{
+						max=j;
+					}
+					j=0;
+					flag=false;
+				}
+			}
+			else
+			{
+				if(flag==false)
+				{
+					flag=true;
+				}
+				j++;
+			}
+		}
+		console.log(max);
+	</script>
+
+</body>
+</html>

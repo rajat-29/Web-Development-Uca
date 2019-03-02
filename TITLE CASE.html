@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		var str="hello rajat gupta";
+		var title="";
+		var flag=false;
+		for(var i=0;i<str.length;i++)
+		{
+			if(str[i]==' ')
+			{
+				if(flag==true)
+				{
+					flag=false;
+				}
+				title += str[i];
+			}
+			else
+			{
+				if(flag==false)
+				{
+					title=title+str[i].toUpperCase();
+					flag=true;
+				}
+				else
+				{
+					title=title+str[i];
+				}
+			}
+		}
+		document.write(title);
+	</script>
+
+</body>
+</html>

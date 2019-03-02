@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		var a=[[5,7],[6,5,2,5],[1,2,8,4,5,6]];
+		for(var i=0;i<a.length;i++)
+		{
+			max=a[i][0];
+			for(var j=0;j<a[i].length;j++)
+			{
+				if(max<a[i][j])
+				{
+					max=a[i][j];
+				}
+			}
+			a[i]=max;
+		}
+		for(i=0;i<a.length;i++)
+			console.log(a[i]);
+	</script>
+
+</body>
+</html>
