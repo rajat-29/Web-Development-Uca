@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Increase Width by 1</title>
+</head>
+<body bgcolor="red">
+<input id="abc" style="width:100px;" />
+
+<script>
+	var ip = document.getElementById('abc');
+	var i = setInterval(change_width,1000);
+	function change_width() {
+		var width = parseInt(ip.style.width)+10;
+		 width=width+'px';
+		 ip.style.width = width;
+		 if(width+1 == 10)
+		 {
+		 	clearInterval(i);
+		 }
+		 console.log(width);
+	}
+</script>
+</body>
+</html>

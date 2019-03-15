@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blocking Code</title>
+</head>
+<body>
+	<button id="btn">Click Me</button>
+
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		btn.onclick=function() {
+			alert("welcome");
+		}
+		for(var i=0;i<100000;i++)
+		{
+			var e=document.createElement('li');
+			e.innerHTML=i;
+			document.body.appendChild(e);
+		}
+		var a=7;
+		var b=8;
+		var c=9;
+		var d=10;
+	</script>
+
+</body>
+</html>

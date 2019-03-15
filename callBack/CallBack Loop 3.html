@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CallBack Loop</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var i,j;
+		for(i=0;i<11;i++)
+		{
+			fun(i,function(j)
+				{
+					console.log(j);
+				});
+		}
+		function fun(i,callback) {
+			setTimeout(function()
+			{
+				callback(i);
+			},1000);
+		}
+	</script>
+
+</body>
+</html>
