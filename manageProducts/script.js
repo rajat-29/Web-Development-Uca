@@ -1,10 +1,27 @@
 var products = [];
 var productId = 1;
+
+function retrive() {
+	var d = localStorage.getItem("Content");
+	if(d != null)
+	{
+		products = JSON.parse(d);
+		for(var i=0;i<products.length;i++)
+		{
+			addProducttoDOM(products[i]);
+		}
+		productId=products.length;
+	}
+}
+
+
 var divAddProduct = document.getElementById("divAddProduct");
 var divListProducts = document.getElementById("divListProducts");
 var aAddProduct = document.getElementById("aAddProduct");
+var data;
 
 
+ 
 aAddProduct.addEventListener("click", function(event) {  
     createNewProductPanel(); 
 	}
@@ -98,6 +115,7 @@ function addProducttoDOM(objProduct) {
     insertBlankLine(divProduct);
 	insertBlankLine(divProduct);
 
+	PutIntoLocalStorage();
 	unHideAddNewProductLink();
 }
 
@@ -119,6 +137,8 @@ function getProductDetails(selectedProductIndex) {
 function removeFromProductsArray(selectedProductIndex) {
 	products.splice(selectedProductIndex,1);
 	console.log(products);
+	data = JSON.stringify(products);
+	localStorage.setItem("Content",data);
 }
 
 function deleteNewProductPanel() {
@@ -161,6 +181,8 @@ function editProductArray(selectedProductIndex) {
 	console.log(products[selectedProductIndex]);
 	editProducttoDOM(objProduct);
     deleteNewProductPanel();
+    data = JSON.stringify(products);
+	localStorage.setItem("Content",data);
 }
 
 function createNewProductPanel(selectedProductIndex) {
@@ -229,6 +251,63 @@ function createNewProductPanel(selectedProductIndex) {
 		}
 	);	
 
+}
+
+function editProductPanel(selectedProductIndex) {
+	hideAddNewProductLink();
+
+	/* Label - Product Quantity */ 
+	var lblAddProduct = document.createElement("label");
+	lblAddProduct.innerHTML = "Add New Product";
+	lblAddProduct.setAttribute("style","font-weight:bold");
+    divAddProduct.appendChild(lblAddProduct);
+
+	insertBlankLine(divAddProduct);
+	insertBlankLine(divAddProduct);
+	
+	/* TextBox - Product Name */ 
+	var txtProductName = document.createElement("input");
+	txtProductName.setAttribute("type","text");
+	txtProductName.setAttribute("id","txtProductName");
+    txtProductName.setAttribute("placeholder", "Enter the product name");	
+	txtProductName.setAttribute("style","width:250px");
+	divAddProduct.appendChild(txtProductName);	
+	
+	insertBlankLine(divAddProduct);
+	insertBlankLine(divAddProduct);
+	
+	/* TextBox - Product Description */ 
+	var txtProductDesc = document.createElement("textarea");
+	txtProductDesc.setAttribute("id","txtProductDesc");
+    txtProductDesc.setAttribute("placeholder", "Enter the product description");	
+	txtProductDesc.setAttribute("style","width:250px ; height:50px");
+	divAddProduct.appendChild(txtProductDesc);	
+	
+	insertBlankLine(divAddProduct);
+	insertBlankLine(divAddProduct);
+
+	/* TextBox - Product Price */ 
+	var txtProductPrice = document.createElement("input");
+	txtProductPrice.setAttribute("type","text");
+	txtProductPrice.setAttribute("id","txtProductPrice");
+    txtProductPrice.setAttribute("placeholder", "Enter the product price");	
+	txtProductPrice.setAttribute("style","width:250px");
+	divAddProduct.appendChild(txtProductPrice);	
+	
+	insertBlankLine(divAddProduct);
+	insertBlankLine(divAddProduct);
+	
+	/* TextBox - Product Quantity */ 
+	var txtProductQuantity = document.createElement("input");
+	txtProductQuantity.setAttribute("type","text");
+	txtProductQuantity.setAttribute("id","txtProductQuantity");
+    txtProductQuantity.setAttribute("placeholder", "Enter the product quantity");	
+	txtProductQuantity.setAttribute("style","width:250px");
+	divAddProduct.appendChild(txtProductQuantity);	
+	
+	insertBlankLine(divAddProduct);
+	insertBlankLine(divAddProduct);
+
 	/* Button - Edit Product */ 
 
 	var btnEditButton = document.createElement("button");
@@ -241,6 +320,12 @@ function createNewProductPanel(selectedProductIndex) {
 	});
 }
 
+
 function editProduct(selectedProductIndex) {
-	createNewProductPanel(selectedProductIndex);
+	editProductPanel(selectedProductIndex);
+}
+
+function PutIntoLocalStorage() {
+	data = JSON.stringify(products);
+	localStorage.setItem("Content",data);
 }
