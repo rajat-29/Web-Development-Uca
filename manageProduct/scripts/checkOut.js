@@ -2,6 +2,10 @@ var cart = [];
 var cartId = 1;
 
 function retrive() {
+	if(!sessionStorage.current_User) {
+		window.location.href = 'login.html';
+	}
+	else {
 	var d = localStorage.getItem("Carts");
 	if(d != null)
 	{
@@ -14,6 +18,7 @@ function retrive() {
 	else{
 		cart = [];
 	}
+}
 }
 
 var divListCart = document.getElementById("divListCarts");

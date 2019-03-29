@@ -4,6 +4,10 @@ var cart = [];
 var cartId = 1
 
 function retrive() {
+	if(!sessionStorage.current_User) {
+		window.location.href = 'login.html';
+	}
+	else {
 	var d = localStorage.getItem("Content");
 	var tempArrayCart = localStorage.getItem("Carts");
 	if(d != null)
@@ -20,6 +24,7 @@ function retrive() {
 		cartID=cart.length;
 		}
 	}
+}
 }
 
 var divListProducts = document.getElementById("divListProducts");

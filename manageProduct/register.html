@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body onLoad="retrive()">
+
+	<div class="container"><br>
+		<h1 class="text-success text-center">FORM VALIDATION </h1>
+		<div class="col-lg-8 m-auto d-block"><br>
+
+			<form action="#" onsubmit="return validation()" class="bg-light">
+
+				<div class="form-group">
+					<label> Username: </label>
+					<input type="text" name="user" class="form-control" id="user" autocomplete="off">
+					<span id="username"> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Password: </label>
+					<input type="text" name="pass" class="form-control" id="pass5" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label>Confirm Password: </label>
+					<input type="text" name="pass" class="form-control" autocomplete="off">
+				</div>
+				
+				<div class="form-group">
+					<label>Mobile No: </label>
+					<input type="text"  class="form-control" autocomplete="off">
+				</div>
+
+				<input type="submit" class="btn-success" onclick="rajat()">
+
+			</form>
+			
+		</div>
+	</div>	
+	
+	<script type="text/javascript" src="scripts/register.js"></script>
+</body>
+</html>
