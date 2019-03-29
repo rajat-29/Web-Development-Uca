@@ -5,6 +5,7 @@ var cartId = 1
 
 function retrive() {
 	var d = localStorage.getItem("Content");
+	var tempArrayCart = localStorage.getItem("Carts");
 	if(d != null)
 	{
 		products = JSON.parse(d);
@@ -12,8 +13,12 @@ function retrive() {
 		{
 			addProducttoDOM(products[i]);
 		}
-		productId=products.length;
-		cartId=cart.length;
+		productId=products.length+1;
+		if(tempArrayCart!=null)
+		{
+		cart= JSON.parse(tempArrayCart);
+		cartID=cart.length;
+		}
 	}
 }
 

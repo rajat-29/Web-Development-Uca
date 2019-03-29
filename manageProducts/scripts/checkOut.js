@@ -11,6 +11,9 @@ function retrive() {
 			addProducttoDOM(cart[i]);
 		}
 	}
+	else{
+		cart = [];
+	}
 }
 
 var divListCart = document.getElementById("divListCarts");
@@ -47,10 +50,13 @@ function addProducttoDOM(objProduct) {
 	tr.appendChild(td5);
 
 	btn.addEventListener("click", function(event) {  
-	var targetParent = event.target.parentNode;
+var parentNode = event.target.parentNode.parentNode;
 		   var selectProductIndex = td1.innerHTML; 
 		   console.log(selectProductIndex);
 		   removeFromCart(selectProductIndex);
+		   	//var parentNode = event.target.parentNode.parentNode;
+		   	console.log(parentNode);
+	parentNode.parentNode.removeChild(parentNode);
  
 	});
 	console.log(tr);
@@ -62,7 +68,8 @@ function removeFromCart(selectProductIndex) {
 	cart.splice((selectProductIndex-1),1);
 	console.log(cart);
 	data = JSON.stringify(cart);
-	localStorage.setItem("Carts",data);
+	localStorage.setItem("Carts", JSON.stringify(cart));
+	//localStorage.setItem("Carts",data);
 }
 
 function getProductIndex(id) {
