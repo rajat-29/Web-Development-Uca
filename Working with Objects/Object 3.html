@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<!-- script for this keyword and changing the names through functions -->
+
+	<script type="text/javascript">
+		var details = new Object();  
+		details.first_name = "Rajat";
+		details.last_name = "Gupta";
+		details.getFull_Name = function() {
+			return this.first_name +" " + this.last_name;
+		}
+		console.log(details.getFull_Name());
+		details.change_Name = function (first,last) {
+			this.first_name = first;
+			this.last_name = last;
+		}
+		details.change_Name("rishabh","anand");
+		console.log(details.getFull_Name());
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Creation</title>
+</head>
+<body>
+
+	<!-- script for this keyword and accessing the object
+	  	 and putting object in global data as global variable are in 
+	  	 windows scope  -->
+
+	<script type="text/javascript">
+		var details = new Object();
+		details.first_name = "Rajat";
+		details.last_name = "Gupta";
+		details.getFull_Name = function() {
+			return this.first_name +" " + this.last_name;
+		}
+		var globalobject = details.getFull_Name;
+		console.log(globalobject());
+		console.log(details.getFull_Name());
+		console.log(this);
+	</script>
+
+</body>
+</html>
