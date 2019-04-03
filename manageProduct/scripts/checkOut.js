@@ -51,6 +51,7 @@ function addProducttoDOM(objProduct) {
 	var btn = document.createElement("button");
 	btn.innerHTML = "Remove";
 	btn.setAttribute("id","btn"+cartId);
+	btn.setAttribute("style","color :black;");
 	td5.appendChild(btn);
 	tr.appendChild(td5);
 

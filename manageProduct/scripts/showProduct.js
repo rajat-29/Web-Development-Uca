@@ -57,6 +57,7 @@ function addProducttoDOM(objProduct) {
 	var input = document.createElement("input");
 	input.setAttribute("type","textbox"+productId);
 	input.setAttribute("id","input"+productId);
+	input.setAttribute("style","color :black;");
 	td4.appendChild(input);
 	tr.appendChild(td4);
 
@@ -64,6 +65,7 @@ function addProducttoDOM(objProduct) {
 	var btn = document.createElement("button");
 	btn.innerHTML = "Add to Cart";
 	btn.setAttribute("id","btn"+productId);
+	btn.setAttribute("style","color :black;");
 	td5.appendChild(btn);
 	tr.appendChild(td5);
 
