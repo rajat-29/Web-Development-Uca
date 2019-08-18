@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Acme', sans-serif;
+}
+
+body{
+	background-color: #0a3d62;
+}
+
+.container {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+}
+
+h1 {
+	margin: 30px;
+	text-shadow: 5px 5px 0 white;
+	font-size: 100px;
+	color: #f6b93b;
+}
+
+.dice {
+	text-align: center;
+	display: inline-block;
+}
+
+p {
+	font-size: 2rem;
+	color: #00b894;
+	text-shadow: 1px 1px white;
+}
+
+button {
+	margin-top: 5%;
+	padding: 10px;
+	background-color: #00b894;
+	border: none;
+}
+
+img {
+		margin-top: 5%;
+	width: 75%;
+}
