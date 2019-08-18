@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="images\favicon.ico">
+<head>
+	<title>FORM VALIDATION</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container"><br>
+		<h1 class="text-success text-center">FORM VALIDATION </h1>
+		<div class="col-lg-8 m-auto d-block"><br>
+
+			<form action="#" onsubmit="return validation()" class="bg-light">
+
+				<div class="form-group">
+					<label> Username: </label>
+					<input type="text" name="user" class="form-control" id="user" autocomplete="off">
+					<span id="username" class="text-danger "> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Password: </label>
+					<input type="text" name="pass" class="form-control" id="pass" autocomplete="off">
+					<span id="passwords" class="text-danger "> </span>
+				</div>
+
+				<div class="form-group">
+					<label>Confirm Password: </label>
+					<input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off">
+					<span id="confrmpass" class="text-danger "> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Mobile Number: </label>
+					<input type="text" name="mobile" class="form-control" id="MobileNumber" autocomplete="off">
+					<span id="mobileno" class="text-danger "> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<span id="emailids" class="text-danger "> </span>
+				</div>
+
+				<input type="submit" name="submit" value="submit" class="btn-success">
+
+			</form>
+			
+		</div>
+	</div>	
+
+	<script type="text/JavaScript">
+
+		function validation() {
+
+			var user = document.getElementById('user').value;
+			var pass1 = document.getElementById('pass').value;
+			var conpass1 = document.getElementById('conpass').value;
+			var mob = document.getElementById('MobileNumber').value;
+			var emaill = document.getElementById('emails').value;
+
+			// to check for name
+
+			if(user == ""){
+				document.getElementById('username').innerHTML = "Please fill the username !!";
+				return false;
+			}
+
+			if(!isNaN(user)) {
+				document.getElementById('username').innerHTML = "Name can not be a no";
+				return false;
+			}
+
+			if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('username').innerHTML = "User length must be between 2 to 20";
+				return false;
+			}
+
+
+
+			// to check for password
+
+			if(pass1 == ""){
+				document.getElementById('passwords').innerHTML = "Please fill the password !!";
+				return false;
+			}
+
+			if((pass1.length <= 8) || (pass1.length > 20)) {
+				document.getElementById('passwords').innerHTML = "Password length must be between 8 to 20";
+				return false;
+			}
+
+
+
+			//check password
+
+			if(pass1 != conpass1){
+				document.getElementById('confrmpass').innerHTML = "Password should be Equal";
+				return false;
+			}
+
+			if(conpass1 == ""){
+				document.getElementById('confrmpass').innerHTML = "Please fill the password !!";
+				return false;
+			}
+
+
+
+			//check mobile.
+
+			if(mob == ""){
+				document.getElementById('mobileno').innerHTML = "Please fill the mobile no !!";
+				return false;
+			}
+
+			if(isNaN(mob)) {
+				document.getElementById('mobileno').innerHTML = "Mobile can not be a character";
+				return false;
+			}
+
+			if(mob.length != '10') {
+				document.getElementById('mobileno').innerHTML = "Mobile length must be 10";
+				return false;
+			}
+
+
+
+			//check email
+
+			if(emaill == ""){
+				document.getElementById('emailids').innerHTML = "Please fill the email address !!";
+				return false;
+			}
+
+			if(emaill.indexOf('@') <= 0) {
+				document.getElementById('emailids').innerHTML = "Email format of @ is not correct";
+				return false;
+			}
+
+			if((emaill.charAt(emaill.length-4) != '.') && (emaill.charAt(emaill.length-3) != '.')) {
+				document.getElementById('emailids').innerHTML = "Email format of . is not correct";
+				return false;
+			}
+
+			
+		}
+
+	</script>	
+
+</body>
+</html>
