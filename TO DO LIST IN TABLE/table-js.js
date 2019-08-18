@@ -43,8 +43,6 @@ var btn = document.getElementById("submitbutton");
 			del_co.appendChild(button);
 			row.appendChild(del_co);
 
-
-
 			parent.appendChild(row);
 		}
 	}
