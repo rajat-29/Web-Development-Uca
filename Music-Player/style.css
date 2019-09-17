@@ -1,0 +1,144 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	background: #ecedef;
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+h4 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #666;
+	font-weight: 300;
+}
+
+#container {
+	width: 25%;
+	height: auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 35%;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+	border-radius: 24px;
+	background: #ecedef;
+}
+
+
+
+#container-top img {
+	width: 100%;
+	border-top-left-radius: 24px;
+	border-top-right-radius: 24px;
+}
+
+#container-bottom {
+	width: 220px;
+	padding: 10px 20px 20px 20px;
+}
+
+#btns {
+	margin-top: 15%;
+	margin-left: 25%;
+	float: left;
+}
+
+#play, #backward, #forward {
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	font-size: 26px;
+	line-height: 26px;
+	color: #333;
+	background: #ecedef;
+}
+
+#timeNow {
+	margin-top: 0%;
+	margin-left: 25%;
+	margin-bottom: 10%;
+	width: 160px;
+	float: left;
+    font-size: 16px;
+	line-height: 16px;
+	padding-top: 14px;
+}
+
+#durationBar {
+	width: 220px;
+	height: 10px;
+	background: #333;
+	display: flex;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 3px 10px 0 rgba(0,0,0,0.3);
+}
+
+#expandingBar {
+	height: 10px;
+	background-color: #ecedef;
+}
+
+#movingBar {
+	width: 10px;
+	height: 10px;
+	background-color: #ecedef;
+}
+
+@media screen and (max-width: 480px) {
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 95%;
+	height: auto;
+	margin-bottom: 2%;
+	margin-left: 0%;
+}
+
+h3 {
+	margin-top: 5%;
+	text-align: center;
+}
+
+h4 {
+	margin-top: 2%;
+	text-align: center;
+}
+
+#btns {
+	margin-top: 10%;
+	margin-left: 35%;
+}
+
+#container-bottom {
+	width: 90%;
+	height: auto;
+
+}
+
+#timeNow {
+	margin-top: 5%;
+	margin-left: 30%;
+	margin-bottom: 10%;
+    font-size: 25px;
+}
+
+#durationBar {
+	width: 100%;
+	height: 10px;
+}
+
+}
+
+
