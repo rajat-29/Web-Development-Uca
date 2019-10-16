@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			
+			padding: 0;
+			margin: 0;
+			background: #3C3B3F;
+			background: -webkit-linear-gradient(#605C3C, #3C3B3F);
+			background: -o-linear-gradient(#605C3C, #3C3B3F);
+			background: linear-gradient(#605C3C, #3C3B3F);
+			display: flex;
+			overflow-x: visible;
+			justify-content: center;
+			align-items: center;
+		}
+		#img {
+			margin-top: 20px;
+			width: 200px;
+			height: 200px;
+			border-radius: 5px;
+		}	
+		a {
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			text-decoration: none;
+			color: #fff;
+		}
+		button {
+			margin: 20px;
+			border-radius: 5px;
+			background-color: #fab447;
+			border: none;
+			width: 80px;
+			height: 35px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="" alt="" id="img">
+		<h1><a href=""></a></h1>
+		<button id="previmg">Previous</button>
+		<button id="nextimg">Next</button><br>
+		
+		<table id="reposis">
+			<tr>
+				
+			</tr>
+
+		</table>
+		</div>
+	
+</body>
+<script>
+	var i =0,len;
+	var data = [];
+	var repo;
+	var repodata;
+	var img = document.querySelector("#img");
+	var a = document.querySelector("a");
+	var nextimg = document.getElementById("nextimg");
+	var previmg = document.getElementById("previmg");
+	var reposis = document.getElementById('reposis');
+
+	var req = new XMLHttpRequest();
+	req.open("GET", 'https://api.github.com/users?since=135');
+	req.onload = function () 
+	{
+		data = [...JSON.parse(req.responseText)];
+		img.setAttribute("src", data[0]["avatar_url"]);
+	}
+	req.send();
+
+
+	nextimg.addEventListener("click", function(){
+		if(i==len)
+		{
+			i=0;
+		}
+		i++;
+		img.setAttribute("src", data[i]["avatar_url"]);
+		a.innerHTML = data[i]["login"];
+		a.href = data[i]["url"];
+
+	})
+	previmg.addEventListener("click", function(){
+		if(i==0)
+		{
+			i=len-1;
+		}
+		i--;
+		img.setAttribute("src", data[i]["avatar_url"]);
+		a.innerHTML = data[i]["login"];
+		a.href = data[i]["url"];
+
+	})
+
+</script>
+</html>
