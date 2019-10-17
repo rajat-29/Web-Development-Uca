@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="600" height="300" style="border:1px solid #c3c3c3;">hi</canvas>
+<br>
+<button id="moveRight">Move Right</button>
+<button id="moveLeft">Move Left</button>
+<button id="moveUp">Move Up</button>
+<button id="moveDown">Move Down</button>
+
+</body>
+
+<script>
+	var moveRight = document.getElementById("moveRight");
+	var moveLeft = document.getElementById("moveLeft");
+	var moveUp = document.getElementById("moveUp");
+	var moveDown = document.getElementById("moveDown");
+
+	var can = document.getElementById("myCanvas");
+	var x = 10,y=10;
+	var h=50,w=50;
+	var c = can.getContext("2d");
+	c.beginPath();
+	c.fillStyle = "black";
+	c.fillRect(x,y,w,h);
+
+	moveRight.addEventListener("click", function() {
+		c.clearRect(x,y,w,h);
+		x = x+10;
+		c.fillRect(x,y,w,h);
+	})
+
+	moveLeft.addEventListener("click", function() {
+		c.clearRect(x,y,w,h);
+		x = x-10;
+		c.fillRect(x,y,w,h);
+	})
+
+	moveUp.addEventListener("click", function() {
+		c.clearRect(x,y,w,h);
+		y = y-10;
+		c.fillRect(x,y,w,h);
+	})
+
+	moveDown.addEventListener("click", function() {
+		c.clearRect(x,y,w,h);
+		y = y+10;
+		c.fillRect(x,y,w,h);
+	})
+</script>
+
+</html>
